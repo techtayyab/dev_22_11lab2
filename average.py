@@ -15,4 +15,4 @@ elif (avg > 60 or avg < 80):
 elif (avg > 40 or avg < 60):
   print ("Grade: C")
 else:
-  print ("You Failed.")
+  print("You Failed.")
