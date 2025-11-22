@@ -1,18 +1,21 @@
-a = input ("Enter marks for subject 1: ")
-b = input ("Enter marks for subject 2: ")
-c = input ("Enter marks for subject 3: ")
-d = input ("Enter marks for subject 4: ")
-e = input ("Enter marks for subject 5: ")
+import sys
 
-avg = a + b + c + d + e / 5
+# Expecting 5 marks as arguments
+if len(sys.argv) < 6:
+    print("usage: python average.py <mark1> <mark2> <mark3> <mark4> <mark5>")
+    sys.exit(1)
 
-print ("Average of 5 subjects: ", avg)
+# Convert arguments to integers
+marks = [int(sys.argv[i]) for i in range(1, 6)]
 
-if (avg > 80):
-  print ("Grade: A")
-elif (avg > 60 or avg < 80):
-  print ("Grade: B")
-elif (avg > 40 or avg < 60):
-  print ("Grade: C")
+# Calculate average
+average = sum(marks) / 5
+
+print("Marks:", marks)
+print("Average:", average)
+
+# Grade logic
+if average >= 40:
+    print("You Passed.")
 else:
-  print("You Failed.")
+    print("You Failed.")
